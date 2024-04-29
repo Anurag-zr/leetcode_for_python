@@ -16,18 +16,33 @@ class Solution:
 
         # using combinatorial formula
 
-        if numRows == 0 : return [[]]
-        if numRows ==1 : return [[1]]
+        # if numRows == 0 : return [[]]
+        # if numRows ==1 : return [[1]]
 
-        ans = []
-        ans.append([1])
-        for i in range (1,numRows): 
-            prevRow = ans[-1]
+        # ans = []
+        # ans.append([1])
+        # for i in range (1,numRows): 
+        #     prevRow = ans[-1]
+        #     curRow = [1]*(i+1)
+
+        #     for j in range(1,i):
+        #         curRow[j] = prevRow[j-1] + prevRow[j]
+
+        #     ans.append(curRow)
+
+        # return ans
+
+        # using 1-D array
+
+        ans=[]
+        prevRow =[1]
+        ans.append(prevRow)
+        for i in range(1,numRows):
             curRow = [1]*(i+1)
-
             for j in range(1,i):
-                curRow[j] = prevRow[j-1] + prevRow[j]
+                curRow[j] = prevRow[j-1] + prevRow [j]
 
             ans.append(curRow)
+            prevRow = curRow
 
         return ans
