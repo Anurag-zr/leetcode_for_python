@@ -31,5 +31,3 @@ class Solution:
             ans.append(curRow)
 
         return ans
-
-        return ans
